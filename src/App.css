@@ -5,6 +5,7 @@ body {
 
 li {
   list-style: none;
+  padding-bottom: 25px;
 }
 
 ul a:visited {
@@ -22,12 +23,176 @@ nav {
   z-index: 10001;
 }
 
-.text-section {
-  display: flex;
-  width: 50%;
+
+
+/*.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 100%;
 }
 
+.grid-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
 
+.grid-text {
+    color: #000;
+    background-color: #fff;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    padding: 0rem 0rem;
+    width: 50vw;
+    height: 100%;
+}*/
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 12 equal columns */
+  width: 100%;
+  gap: 0; /* Optional, adjust if you need spacing between columns */
+}
+
+.grid12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
+  width: 100%;
+  gap: 0; /* Optional, adjust if you need spacing between columns */
+}
+
+.grid-image {
+  grid-column: span 12; /* Span all 12 columns on extra small screens (full width) */
+  width: 100%;
+  height: auto;
+}
+
+.grid-image img {
+  width: 100%;
+  height: auto;
+}
+
+.grid-text {
+  grid-column: span 12; /* Span all 12 columns on extra small screens (full width) */
+  color: #000;
+  background-color: #fff;
+  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  padding: 50px;
+  width: 100%; /* Take up full width */
+  height: 100%;
+  box-sizing: border-box; /* Ensure padding is included in width/height */
+}
+
+.grid-text p, li {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Extra Small Screens (Phones, <576px) */
+@media (max-width: 575.98px) {
+  .grid-image {
+    grid-column: span 12; /* Full width (12 columns) */
+  }
+
+  .grid-text {
+    grid-column: span 12; /* Full width (12 columns) */
+  }
+
+  .grid-form {
+    grid-column: span 12; /* Full width (12 columns) */
+  }
+
+  .form {
+    grid-column: span 12; /* Full width (12 columns) */
+  }
+}
+
+/* Small Screens (Tablets, ≥576px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .grid-image {
+    grid-column: span 12; /* Full width (12 columns) */
+  }
+
+  .grid-text {
+    grid-column: span 12; /* Full width (12 columns) */
+  }
+
+  .grid-form {
+    grid-column: span 12; /* Full width (12 columns) */
+  }
+
+  .form {
+    grid-column: span 12; /* Full width (12 columns) */
+  }
+}
+
+/* Medium Screens (Laptops, ≥768px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .grid-image {
+    grid-column: span 6; /* Take up 6 out of 12 columns (50%) */
+  }
+
+  .grid-text {
+    grid-column: span 6; /* Take up 6 out of 12 columns (50%) */
+  }
+
+  .grid-form {
+    grid-column: span 6;  /* Take up 6 out of 12 columns (50%)*/
+  }
+
+  .form {
+    grid-column: span 6; /* Take up 6 out of 12 columns (50%) */
+  }
+}
+
+/* Large Screens (Desktops, ≥992px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .grid-image {
+    grid-column: span 6; /* Take up 6 out of 12 columns (50%) */
+  }
+
+  .grid-text {
+    grid-column: span 6; /* Take up 6 out of 12 columns (50%) */
+  }
+
+  .grid-form {
+    grid-column: span 6; /* Take up 6 out of 12 columns (50%) */
+  }
+
+  .form {
+    grid-column: span 6; /* Take up 6 out of 12 columns (50%) */
+  }
+}
+
+/* Extra Large Screens (Large Desktops, ≥1200px) */
+@media (min-width: 1200px) {
+  .grid-image {
+    grid-column: span 6; /* Take up 6 out of 12 columns (50%) */
+  }
+
+  .grid-text {
+    grid-column: span 6; /* Take up 6 out of 12 columns (50%) */
+  }
+
+  .grid-form {
+    grid-column: span 6; /* Take up 6 out of 12 columns (50%) */
+  }
+
+  .form {
+    grid-column: span 6; /* Take up 6 out of 12 columns (50%) */
+  }
+}
 
 /* Navbar section */
 
@@ -134,13 +299,6 @@ h3 {
   font-size: 40px;
 }
 
-.banner p {
-  font-size: 20px;
-  max-width: 520px;
-  line-height: 1.5;
-  margin-bottom: 30px;
-}
-
 .button {
   background-color: #D4AF37;
   color: #000;
@@ -151,15 +309,7 @@ h3 {
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
-  margin-right: 20px;
-}
-
-.banner-img img {
-  width: 50%;
-  height: 400px;
-  border-radius: 20px;
-  margin-top: -370px;
-  float: right;
+  margin-top: 15px;
 }
 
 .confirm {
@@ -182,71 +332,55 @@ h3 {
   position: relative;
 }
 
-.squareImg {
-  display: flex;
-  width: 100%;
-  height: auto;
-}
-
-.info-text {
-  color: #000;
-  background-color: #fff;
-  font-size: 22px;
-  padding: 50px;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  width: 100%;
-  height: auto;
-  box-sizing: border-box;
-}
-
-.info-text h2 {
+.text h2 {
   align-items: center;
 }
 
 /* Speciality section*/
 
-.info-text li {
+.text li {
   padding-top: 15px;
   padding-bottom: 15px;
 
 }
 
 /* Form section */
-.container {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-}
 
 /* Form half (left side)*/
-.form-container {
-  display: flex;
+.grid-form {
+  grid-column: span 6;
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  align-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.grid-form p {
+  align-items: center;
+  align-content: center;
   justify-content: center;
 }
 
 /* Form grid layout */
 .formField {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 10px;
-  width: 95.8%;
+  gap: 4px;
+  width: 100%;
   border-radius: 22px;
   justify-content: center;
   align-items: center;
-  padding-bottom: 25px;
-  padding-top: 25px;
+  padding: 20px;
 }
 
 /* Style for each form group */
 .formField div {
   display: flex;
   flex-direction: column;
+  gap: 5px;
 }
 
 .formField label {
@@ -284,7 +418,7 @@ input[type="email"] {
   font-weight: bold;
   cursor: pointer;
   margin-right: 20px;
-  width: 202.7%;
+  width: 100%;
 }
 
 .form-info{
@@ -545,10 +679,6 @@ footer ul li{
     background: #333333;
   }
 
-  .banner-img{
-    display: none;
-  }
-
   form, .comfirm{
     padding: 10px 8%;
   }
@@ -614,11 +744,6 @@ footer ul li{
 
   .bar {
     background: #333333;
-  }
-
-  /* Banner image */
-  .banner-img {
-    display: none;
   }
 
   /* Form and other sections */
@@ -746,11 +871,6 @@ footer ul li{
     padding: 12px;
   }
 
-  /* Hide larger elements on very small screens */
-  .banner-img {
-    display: none;
-  }
-
   /* Media Queries for larger screens (e.g., MacBook 3024x1964) */
 
   @media (min-width: 1920px) {
@@ -758,12 +878,12 @@ footer ul li{
       flex-wrap: wrap; /* Allow items to wrap when there's more space */
     }
   
-    .squareImg {
+    .image {
       width: 50%; /* The image will take up half the container width */
       height: auto; /* Keep the aspect ratio */
     }
   
-    .info-text {
+    .text {
       width: 50%; /* The text will take up the other half of the container */
       padding: 100px; /* Adjust padding for larger screens */
     }
@@ -771,12 +891,12 @@ footer ul li{
   
   /* For very large screens (e.g., 2500px and up) */
   @media (min-width: 2500px) {
-    .squareImg {
+    .image{
       width: 45%; /* Reduce the image container width for ultra-wide screens */
       height: auto; /* Keep aspect ratio intact */
     }
   
-    .info-text {
+    .text {
       width: 45%; /* Adjust text width to balance the layout */
       padding: 120px; /* Increase padding for ultra-wide screens */
     }

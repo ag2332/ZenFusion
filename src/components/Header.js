@@ -1,11 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import mainImg from "../images/banner-image.jpg";
+import Grid12 from "./atoms/Grid12";
+import GridText from "./atoms/GridText";
+import GridImage from "./atoms/GridImage";
 
 const Header = () => {
     return (
-        <header className="about">
-                <div className="form-info">
+        <Grid12>
+                <GridText>
                     <h2 className="black-heading">Book a Table</h2>
                     <h3>The Essence of Asian flavors, in Mayfair</h3>
                     <p>
@@ -15,11 +18,11 @@ const Header = () => {
                     <Link to="/booking">
                         <button className="button">Reserve a Table</button>
                     </Link>
-                </div>
-                <div className="squareImg">
+                </GridText>
+                <GridImage>
                     <img src={mainImg} alt=""/>
-                </div>
-        </header>
+                </GridImage>
+        </Grid12>
     );
 };
 
