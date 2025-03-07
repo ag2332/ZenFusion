@@ -101,96 +101,36 @@ nav {
 
 /* Extra Small Screens (Phones, <576px) */
 @media (max-width: 575.98px) {
-  .grid-image {
-    grid-column: span 12; /* Full width (12 columns) */
-  }
-
-  .grid-text {
-    grid-column: span 12; /* Full width (12 columns) */
-  }
-
-  .grid-form {
-    grid-column: span 12; /* Full width (12 columns) */
-  }
-
-  .form {
+  .grid-image, .grid-text {
     grid-column: span 12; /* Full width (12 columns) */
   }
 }
 
 /* Small Screens (Tablets, ≥576px) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .grid-image {
-    grid-column: span 12; /* Full width (12 columns) */
-  }
-
-  .grid-text {
-    grid-column: span 12; /* Full width (12 columns) */
-  }
-
-  .grid-form {
-    grid-column: span 12; /* Full width (12 columns) */
-  }
-
-  .form {
+  .grid-image, .grid-text {
     grid-column: span 12; /* Full width (12 columns) */
   }
 }
 
 /* Medium Screens (Laptops, ≥768px) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .grid-image {
-    grid-column: span 6; /* Take up 6 out of 12 columns (50%) */
-  }
-
-  .grid-text {
-    grid-column: span 6; /* Take up 6 out of 12 columns (50%) */
-  }
-
-  .grid-form {
-    grid-column: span 6;  /* Take up 6 out of 12 columns (50%)*/
-  }
-
-  .form {
-    grid-column: span 6; /* Take up 6 out of 12 columns (50%) */
+  .grid-image, .grid-text {
+    grid-column: span 6; /* Full width (12 columns) */
   }
 }
 
 /* Large Screens (Desktops, ≥992px) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  .grid-image {
-    grid-column: span 6; /* Take up 6 out of 12 columns (50%) */
-  }
-
-  .grid-text {
-    grid-column: span 6; /* Take up 6 out of 12 columns (50%) */
-  }
-
-  .grid-form {
-    grid-column: span 6; /* Take up 6 out of 12 columns (50%) */
-  }
-
-  .form {
-    grid-column: span 6; /* Take up 6 out of 12 columns (50%) */
+  .grid-image, .grid-text {
+    grid-column: span 6; /* Full width (12 columns) */
   }
 }
 
 /* Extra Large Screens (Large Desktops, ≥1200px) */
 @media (min-width: 1200px) {
-  .grid-image {
-    grid-column: span 6; /* Take up 6 out of 12 columns (50%) */
-  }
-
-  .grid-text {
-    grid-column: span 6; /* Take up 6 out of 12 columns (50%) */
-  }
-
-  .grid-form {
-    grid-column: span 6; /* Take up 6 out of 12 columns (50%) */
-  }
-
-  .form {
-    grid-column: span 6; /* Take up 6 out of 12 columns (50%) */
+  .grid-image, .grid-text {
+    grid-column: span 6; /* Full width (12 columns) */
   }
 }
 
@@ -436,13 +376,120 @@ input[type="email"] {
   font-size: 22px;
 }
 
-.confirm-info {
-  font-size: 22px;
-  color: #000;
-  align-items: center;
-  padding: 240px;
-  font-size: 22px;
-  width: 50%;
+/* form media queries */
+/* Media Queries for Responsiveness */
+
+/* Small Screens (Phones, <576px) */
+@media (max-width: 575.98px) {
+  .grid-form {
+    grid-column: span 12; /* Full width (12 columns) for small screens */
+    padding: 15px; /* Add padding on smaller screens */
+  }
+
+  .formField {
+    padding: 15px; /* Reduce padding for better space management */
+  }
+
+  .form-info {
+    padding: 20px; /* Adjust the padding */
+  }
+
+  .form-button input {
+    padding: 12px 16px; /* Smaller button padding on small screens */
+  }
+
+  input[type="date"], input[type="number"], select, input[type="text"], input[type="occasion"], input[type="name"], input[type="email"] {
+    width: 60%;
+    height: 40px;
+  }
+
+  .info-booking {
+    font-size: 18px; /* Adjust font size for small screens */
+  }
+}
+
+/* Small Screens (Tablets, ≥576px and <768px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .grid-form {
+    grid-column: span 12; /* Full width (12 columns) for tablets */
+  }
+
+  .formField {
+    padding: 18px; /* Slightly smaller padding for better space distribution */
+  }
+
+  .form-info {
+    padding: 30px; /* Adjust form info padding */
+  }
+
+  .form-button input {
+    padding: 12px 16px; /* Consistent smaller button padding */
+  }
+
+  input[type="date"], input[type="number"], select, input[type="text"], input[type="occasion"], input[type="name"], input[type="email"] {
+    width: 80%;
+    height: 50px;
+  }
+
+  .info-booking {
+    font-size: 20px; /* Adjust font size for tablets */
+  }
+}
+
+/* Medium Screens (Laptops, ≥768px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .grid-form {
+    grid-column: span 6; /* Take up 50% width (half) for laptops */
+  }
+
+  .formField {
+    padding: 20px; /* Consistent padding for larger tablets and laptops */
+  }
+
+  .form-info {
+    padding: 40px; /* Adjust padding on the form info */
+  }
+
+  .form-button input {
+    padding: 14px 18px; /* Standard button padding */
+  }
+
+  input[type="date"], input[type="number"], select, input[type="text"], input[type="occasion"], input[type="name"], input[type="email"] {
+    width: 90%;
+    height: 60px;
+  }
+
+  .info-booking {
+    font-size: 22px; /* Default font size for laptops */
+  }
+}
+
+/* Large Screens (Desktops, ≥992px) */
+@media (min-width: 992px) {
+  .grid-form {
+    grid-column: span 6; /* Take up 50% width (half) for large screens */
+  }
+
+  .formField {
+    padding: 20px; /* Maintain the form padding */
+  }
+
+  .form-info {
+    padding: 50px; /* Larger padding for desktop size */
+  }
+
+  input[type="date"], input[type="number"], select, input[type="text"], input[type="occasion"], input[type="name"], input[type="email"] {
+    width: 100%;
+    height: 70px;
+  }
+
+  .form-button input {
+    padding: 14px 18px; /* Standard button padding */
+  }
+
+  .info-booking {
+    font-size: 22px; /* Default font size for large screens */
+  }
 }
 
 /* Carousel section*/
