@@ -60,18 +60,18 @@ const Carousel = () => {
 
             {cardsVisible && (
                 <div className={`cards ${cardsVisible ? 'visible' : ''}`}>
-                    {cards.map((card) => (
-                        <label className="carousel-label" key={card.id} id={card.id}>
+                    {cards.map((item) => (
+                        <label className="carousel-label" key={item.id} id={item.id}>
                             <input className="carousel-input" type="checkbox" />
                             <div className="carousel-card">
                                 <div className="front">
-                                    <img src={card.imageUrl} alt=""/>
+                                    <img src={item.imageUrl} alt=""/>
                                 </div>
                                 <div className="back">
                                     <header>
-                                        <h2>{card.name}</h2>
+                                        <h2>{item.name}</h2>
                                     </header>
-                                        <p>{card.description}</p>
+                                        <p>{item.description}</p>
                                     <div>
                                         <div className="c-line"></div>
                                     </div>

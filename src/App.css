@@ -13,7 +13,6 @@ ul a:visited {
   text-decoration: none; /* Optional: removes underline on visited links */
 }
 
-
 a:visited {
   text-decoration: none;
   color: inherit;
@@ -22,34 +21,6 @@ a:visited {
 nav {
   z-index: 10001;
 }
-
-
-
-/*.grid2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  width: 100%;
-}
-
-.grid-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.grid-text {
-    color: #000;
-    background-color: #fff;
-    font-size: 22px;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    padding: 0rem 0rem;
-    width: 50vw;
-    height: 100%;
-}*/
 
 .grid2 {
   display: grid;
@@ -68,7 +39,10 @@ nav {
 .grid-image {
   grid-column: span 12; /* Span all 12 columns on extra small screens (full width) */
   width: 100%;
-  height: auto;
+  height: 100%;
+  display: flex; /* Use flexbox to center content */
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
 }
 
 .grid-image img {
@@ -92,7 +66,8 @@ nav {
   box-sizing: border-box; /* Ensure padding is included in width/height */
 }
 
-.grid-text p, li {
+.grid-text p,
+li {
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -101,41 +76,45 @@ nav {
 
 /* Extra Small Screens (Phones, <576px) */
 @media (max-width: 575.98px) {
-  .grid-image, .grid-text {
+  .grid-image,
+  .grid-text {
     grid-column: span 12; /* Full width (12 columns) */
   }
 }
 
 /* Small Screens (Tablets, ≥576px) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .grid-image, .grid-text {
+  .grid-image,
+  .grid-text {
     grid-column: span 12; /* Full width (12 columns) */
   }
 }
 
 /* Medium Screens (Laptops, ≥768px) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .grid-image, .grid-text {
+  .grid-image,
+  .grid-text {
     grid-column: span 6; /* Full width (12 columns) */
   }
 }
 
 /* Large Screens (Desktops, ≥992px) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  .grid-image, .grid-text {
+  .grid-image,
+  .grid-text {
     grid-column: span 6; /* Full width (12 columns) */
   }
 }
 
 /* Extra Large Screens (Large Desktops, ≥1200px) */
 @media (min-width: 1200px) {
-  .grid-image, .grid-text {
+  .grid-image,
+  .grid-text {
     grid-column: span 6; /* Full width (12 columns) */
   }
 }
 
 /* Navbar section */
-
 .navbar {
   padding: 10px 13%;
   display: flex;
@@ -161,7 +140,7 @@ nav ul li a:visited {
 .bar {
   width: 25px;
   height: 3px;
-  background-color: #000;
+  background-color: #fff;
   margin: 5px 0;
 }
 
@@ -177,23 +156,37 @@ nav ul li a:visited {
   top: 40px;
   right: 0;
   width: 100%;
-  background-color: #495e57;
+  background-color: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: all 0.3s ease-in-out;
 }
 
-.logo img{
+.logo img {
   width: 250px;
   height: auto;
 }
 
 /* Hero section */
-
-.hero {
-  color: #fff;
+.heroStyle {
   background-image: url(./images/hero-background.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-text {
+  font-size: 5rem;
+  text-align: center;
+  color: white;
+  font-family: ferdinand;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .divider {
@@ -203,9 +196,9 @@ nav ul li a:visited {
   width: 100%;
 }
 
-.line-1{
+.line-1 {
   position: absolute;
-  background-color:#D4AF37;
+  background-color: #d4af37;
   height: 6.5px;
   width: 100%;
   top: 50%;
@@ -213,16 +206,16 @@ nav ul li a:visited {
 }
 
 /* header section */
-h1{
-  font-size: 30px;
+h1 {
+  font-size: 32px;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #D4AF37;
-  font-family: 'ferdinand'
+  color: #d4af37;
+  font-family: "ferdinand";
 }
 
 h2 {
-  font-family: 'Vogue';
+  font-family: "Vogue";
 }
 
 h3 {
@@ -240,7 +233,7 @@ h3 {
 }
 
 .button {
-  background-color: #D4AF37;
+  background-color: #d4af37;
   color: #000;
   padding: 14px 18px;
   border: none;
@@ -281,52 +274,61 @@ h3 {
 .text li {
   padding-top: 15px;
   padding-bottom: 15px;
-
 }
 
 /* Form section */
 
-/* Form half (left side)*/
+/* Form half (left side) */
 .grid-form {
-  grid-column: span 6;
-  width: 100%;
+  grid-column: span 12;
+  width: 100%; /* Form takes the full width of the grid column */
   height: 100%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  align-content: center;
-  padding: 20px;
-  box-sizing: border-box;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 0.5rem; /* Optional: rounded corners */
 }
 
-.grid-form p {
-  align-items: center;
-  align-content: center;
-  justify-content: center;
+.grid-heading {
+  color: #000;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
 }
 
-/* Form grid layout */
-.formField {
-  gap: 4px;
-  width: 100%;
-  border-radius: 22px;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+.info-booking {
+  font-size: 1.3rem;
+  text-align: center;
+  margin: 0rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  gap: 1rem; /* Gap between form fields */
+  padding: 0% 10%;
+  align-content: center;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  width: 80%;
+  margin: 0 auto;
 }
 
 /* Style for each form group */
-.formField div {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
 
-.formField label {
-  margin-bottom: 5px;
+.form-row label {
   font-weight: bold;
   color: #000;
+  margin-bottom: 0.5rem;
 }
 
 input[type="date"],
@@ -337,165 +339,73 @@ input[type="occasion"],
 input[type="name"],
 input[type="email"] {
   width: 100%;
-  height: 70px;
-  padding: 8px;
-  font-size: 16px;
+  height: 3rem;
+  font-size: 1rem;
   border-radius: 0px;
-  border: 1px solid #000;
+  border: 0.125rem solid #000;
   box-sizing: border-box;
   cursor: pointer;
 }
 
-.form-button input {
-  display: inline;
-  margin-top: 10px;
-  background-color: #D4AF37;
-  color: #000;
-  padding: 14px 18px;
-  border: none;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-right: 20px;
-  width: 100%;
-}
-
-.form-info{
-  font-size: 22px;
-  color: #000;
-  padding: 50px;
+.grid-button {
+  display: flex;
   align-items: center;
   justify-content: center;
-  align-content: center;
-  width: 100%;
-  height: auto;
 }
 
-.info-booking {
-  font-size: 22px;
+.form-button {
+  display: inline;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: #d4af37;
+  color: #000;
+  border: none;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 80%;
 }
 
-/* form media queries */
-/* Media Queries for Responsiveness */
-
-/* Small Screens (Phones, <576px) */
 @media (max-width: 575.98px) {
   .grid-form {
-    grid-column: span 12; /* Full width (12 columns) for small screens */
-    padding: 15px; /* Add padding on smaller screens */
-  }
-
-  .formField {
-    padding: 15px; /* Reduce padding for better space management */
-  }
-
-  .form-info {
-    padding: 20px; /* Adjust the padding */
-  }
-
-  .form-button input {
-    padding: 12px 16px; /* Smaller button padding on small screens */
-  }
-
-  input[type="date"], input[type="number"], select, input[type="text"], input[type="occasion"], input[type="name"], input[type="email"] {
-    width: 60%;
-    height: 40px;
-  }
-
-  .info-booking {
-    font-size: 18px; /* Adjust font size for small screens */
+    grid-column: span 12; /* Full width (12 columns) */
   }
 }
 
-/* Small Screens (Tablets, ≥576px and <768px) */
+/* Small Screens (Tablets, ≥576px) */
 @media (min-width: 576px) and (max-width: 767.98px) {
   .grid-form {
-    grid-column: span 12; /* Full width (12 columns) for tablets */
-  }
-
-  .formField {
-    padding: 18px; /* Slightly smaller padding for better space distribution */
-  }
-
-  .form-info {
-    padding: 30px; /* Adjust form info padding */
-  }
-
-  .form-button input {
-    padding: 12px 16px; /* Consistent smaller button padding */
-  }
-
-  input[type="date"], input[type="number"], select, input[type="text"], input[type="occasion"], input[type="name"], input[type="email"] {
-    width: 80%;
-    height: 50px;
-  }
-
-  .info-booking {
-    font-size: 20px; /* Adjust font size for tablets */
+    grid-column: span 12; /* Full width (12 columns) */
   }
 }
 
 /* Medium Screens (Laptops, ≥768px) */
 @media (min-width: 768px) and (max-width: 991.98px) {
   .grid-form {
-    grid-column: span 6; /* Take up 50% width (half) for laptops */
-  }
-
-  .formField {
-    padding: 20px; /* Consistent padding for larger tablets and laptops */
-  }
-
-  .form-info {
-    padding: 40px; /* Adjust padding on the form info */
-  }
-
-  .form-button input {
-    padding: 14px 18px; /* Standard button padding */
-  }
-
-  input[type="date"], input[type="number"], select, input[type="text"], input[type="occasion"], input[type="name"], input[type="email"] {
-    width: 90%;
-    height: 60px;
-  }
-
-  .info-booking {
-    font-size: 22px; /* Default font size for laptops */
+    grid-column: span 6; /* Full width (12 columns) */
   }
 }
 
 /* Large Screens (Desktops, ≥992px) */
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1199.98px) {
   .grid-form {
-    grid-column: span 6; /* Take up 50% width (half) for large screens */
-  }
-
-  .formField {
-    padding: 20px; /* Maintain the form padding */
-  }
-
-  .form-info {
-    padding: 50px; /* Larger padding for desktop size */
-  }
-
-  input[type="date"], input[type="number"], select, input[type="text"], input[type="occasion"], input[type="name"], input[type="email"] {
-    width: 100%;
-    height: 70px;
-  }
-
-  .form-button input {
-    padding: 14px 18px; /* Standard button padding */
-  }
-
-  .info-booking {
-    font-size: 22px; /* Default font size for large screens */
+    grid-column: span 6; /* Full width (12 columns) */
   }
 }
 
-/* Carousel section*/
+/* Extra Large Screens (Large Desktops, ≥1200px) */
+@media (min-width: 1200px) {
+  .grid-form {
+    grid-column: span 6; /* Full width (12 columns) */
+  }
+}
+
+/* Carousel hero section*/
 .carousel-divider {
   background-color: #fff;
-  height: 370px;
+  height: 23rem;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -515,8 +425,8 @@ input[type="email"] {
 
 .carousel-divider-text h2 {
   color: #000;
-  font-size: 40px;
-  padding-bottom: 0px;
+  font-size: 2.4rem;
+  padding-bottom: 0rem;
 }
 
 .carousel-text {
@@ -530,6 +440,18 @@ input[type="email"] {
   background-color: #000;
   width: 100%;
   height: 100vh;
+}
+
+.toggle-button {
+  background-color: #d4af37;
+  color: #000;
+  padding: 14px 18px;
+  border: none;
+  text-decoration: none;
+  border-radius: 0px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /* Carousel Card section*/
@@ -547,52 +469,37 @@ input[type="email"] {
   position: relative;
 }
 
-.toggle-button {
-  background-color: #D4AF37;
-  color: #000;
-  padding: 14px 18px;
-  border: none;
-  text-decoration: none;
-  border-radius: 0px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-right: 20px;
-
-}
-
 .cards.visible {
   display: flex;
   opacity: 1; /* Make it visible */
-  max-height: 1200px; /* Set max-height to a large enough value when visible (ensure it accommodates the content) */
+  max-height: 75rem; /* Set max-height to a large enough value when visible (ensure it accommodates the content) */
+  gap: 2rem;
 }
 
-.carousel h2, h3 {
+.carousel h2 {
   margin: 0;
   font-weight: 500;
 }
 
 .carousel-label {
-  margin-right: 10px;
-  margin-left: 10px;
   display: inline-block;
 }
 
 .carousel-card {
   display: flex;
-  position: relative;
-  perspective: 1000px;
-  width: 16.67vw;
-  height: 47.22vh;
-  gap: 10px;
+  perspective: 62.5rem;
+  width: 16vw;
+  height: 43.5vh;
+  align-items: center;
+  justify-content: center;
 }
 
 .carousel-card header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 40px;
-  margin-bottom: 26px;
+  height: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .carousel-card .front {
@@ -603,17 +510,18 @@ input[type="email"] {
   bottom: 0;
   backface-visibility: hidden;
   background: white;
-  border: 2px solid black;
-  border-radius: 14px;
+  border: 0.15rem solid black;
+  border-radius: 0.8rem;
   transition: 0.6s;
   cursor: pointer;
 }
 
 .carousel-card .front img {
+  position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 0.6rem;
 }
 
 .carousel-card .back {
@@ -624,10 +532,11 @@ input[type="email"] {
   bottom: 0;
   backface-visibility: hidden;
   background: #000;
-  border-radius: 14px;
-  padding: 36px 36px 44px 44px;
+  border-radius: 0.8rem;
+  padding: 2.3rem 2.3rem 1.5rem 2.5rem;
   transition: 0.6s;
   cursor: pointer;
+  position: absolute;
 }
 
 .back {
@@ -651,21 +560,467 @@ input:checked ~ .carousel-card .back {
   font-size: 0.9vw;
 }
 
-.carousel-card p, h2 {
-  margin-top: 5vh;
+.carousel-card p,
+h2 {
+  margin-top: 0.6rem;
   color: white;
 }
 
 .c-line {
-  background-color: #D4AF37;
-  height: 6.5px;
+  background-color: #d4af37;
+  height: 0.4rem;
   width: 100%;
   transform: translateY(4px);
 }
 
+/* Media Queries */
+/* Large Screens (Desktops, ≥992px) */
+@media (min-width: 992px) and (max-width: 1299.98px) {
+  .cards {
+    display: flex;
+    background-color: white;
+    height: 58vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Hide the overflow when collapsed */
+    opacity: 0; /* Initially hidden */
+    max-height: 0; /* Initially collapsed */
+    transition: 2s;
+    position: relative;
+  }
+
+  .cards.visible {
+    display: flex;
+    opacity: 1; /* Make it visible */
+    max-height: 75rem; /* Set max-height to a large enough value when visible (ensure it accommodates the content) */
+    gap: 2rem;
+  }
+
+  .carousel-card {
+    display: flex;
+    perspective: 62.5rem;
+    width: 16vw;
+    height: 38vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carousel-label {
+    display: inline-block;
+  }
+
+  .carousel-card :is(p) {
+    font-size: 0.9vw;
+  }
+
+  .carousel-card p,
+  h2 {
+    margin-top: 0.6rem;
+    color: white;
+  }
+
+  .carousel-card h2 {
+    font-size: 1rem;
+  }
+
+  .carousel-card header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .carousel-card .front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backface-visibility: hidden;
+    background: white;
+    border: 0.15rem solid black;
+    border-radius: 0.8rem;
+    transition: 0.6s;
+    cursor: pointer;
+  }
+
+  .carousel-card .front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.6rem;
+  }
+
+  .carousel-card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backface-visibility: hidden;
+    background: #000;
+    border-radius: 0.8rem;
+    padding: 2rem;
+    transition: 0.6s;
+    cursor: pointer;
+  }
+}
+
+/* Large Screens (Desktops, ≥992px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .cards {
+    display: flex;
+    background-color: white;
+    height: 58vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Hide the overflow when collapsed */
+    opacity: 0; /* Initially hidden */
+    max-height: 0; /* Initially collapsed */
+    transition: 2s;
+    position: relative;
+  }
+
+  .cards.visible {
+    display: flex;
+    opacity: 1; /* Make it visible */
+    max-height: 75rem; /* Set max-height to a large enough value when visible (ensure it accommodates the content) */
+    padding: 0.9rem;
+    gap: 2rem;
+  }
+
+  .carousel-card {
+    display: flex;
+    perspective: 62.5rem;
+    width: 16vw;
+    height: 38vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carousel-label {
+    display: inline-block;
+  }
+
+  .carousel-card :is(p) {
+    font-size: 0.5rem;
+  }
+
+  .carousel-card p,
+  h2 {
+    margin-top: 0.6rem;
+    color: white;
+  }
+
+  .carousel-card h2 {
+    font-size: 0.75rem;
+  }
+
+  .carousel-card header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .carousel-card .front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backface-visibility: hidden;
+    background: white;
+    border: 0.15rem solid black;
+    border-radius: 0.8rem;
+    transition: 0.6s;
+    cursor: pointer;
+  }
+
+  .carousel-card .front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.6rem;
+  }
+
+  .carousel-card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backface-visibility: hidden;
+    background: #000;
+    border-radius: 0.8rem;
+    padding: 1.7rem;
+    transition: 0.6s;
+    cursor: pointer;
+  }
+}
+
+/* Medium screens (768px and below) */
+@media (min-width: 500px) and (max-width: 767.9px) {
+  .cards {
+    display: flex;
+    background-color: white;
+    height: auto;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Hide the overflow when collapsed */
+    opacity: 0; /* Initially hidden */
+    max-height: 0; /* Initially collapsed */
+    transition: 2s;
+    position: relative;
+    flex-direction: column;
+  }
+
+  .cards.visible {
+    display: flex;
+    opacity: 1; /* Make it visible */
+    height: auto; /* Set max-height to a large enough value when visible (ensure it accommodates the content) */
+    gap: 1.5rem;
+  }
+
+  .carousel h2 {
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .carousel-label {
+    display: inline-block;
+  }
+
+  .carousel-card {
+    display: flex;
+    perspective: 62.5rem;
+    width: 30rem;
+    height: 11rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carousel-card header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .carousel-card .front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backface-visibility: hidden;
+    background: white;
+    border: 0.15rem solid black;
+    border-radius: 0.8rem;
+    transition: 0.6s;
+    cursor: pointer;
+  }
+
+  .carousel-card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.6rem;
+  }
+
+  .carousel-card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backface-visibility: hidden;
+    background: #000;
+    border-radius: 0.8rem;
+    padding: 2.3rem 2.3rem 1.5rem 2.5rem;
+    transition: 0.6s;
+    cursor: pointer;
+    position: absolute;
+  }
+
+  .back {
+    transform: rotateY(180deg);
+  }
+
+  .carousel-input {
+    position: absolute;
+    scale: 0;
+  }
+
+  input:checked ~ .carousel-card .front {
+    transform: rotateY(-180deg);
+  }
+
+  input:checked ~ .carousel-card .back {
+    transform: rotateY(0);
+  }
+
+  .carousel-card :is(p) {
+    font-size: 0.6rem;
+  }
+
+  .carousel-card p,
+  h2 {
+    margin-top: 0.6rem;
+    color: white;
+  }
+
+  .c-line {
+    background-color: #d4af37;
+    height: 0.2rem;
+    width: 100%;
+    transform: translateY(4px);
+  }
+}
+
+@media (max-width: 499.9px) {
+  .cards {
+    display: flex;
+    background-color: white;
+    height: auto;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Hide the overflow when collapsed */
+    opacity: 0; /* Initially hidden */
+    max-height: 0; /* Initially collapsed */
+    transition: 2s;
+    position: relative;
+    flex-direction: column;
+  }
+
+  .cards.visible {
+    display: flex;
+    opacity: 1; /* Make it visible */
+    height: auto; /* Set max-height to a large enough value when visible (ensure it accommodates the content) */
+    gap: 1rem;
+  }
+
+  .carousel h2 {
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .carousel-divider-text p {
+    font-size: 1.1rem;
+  }
+
+  .carousel-divider-text h2{
+    font-size: 1.8rem;
+  }
+
+  .carousel-label {
+    display: inline-block;
+  }
+
+  .carousel-card {
+    display: flex;
+    perspective: 100rem;
+    width: 18rem;
+    height: 10rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carousel-card header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 0.2rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .carousel-card .front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backface-visibility: hidden;
+    background: white;
+    border: 0.15rem solid black;
+    border-radius: 0.8rem;
+    transition: 0.6s;
+    cursor: pointer;
+  }
+
+  .carousel-card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.6rem;
+  }
+
+  .carousel-card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backface-visibility: hidden;
+    background: #000;
+    border-radius: 0.8rem;
+    padding: 2.3rem 2.3rem 1.5rem 2.5rem;
+    transition: 0.6s;
+    cursor: pointer;
+    position: absolute;
+  }
+
+  .back {
+    transform: rotateY(180deg);
+  }
+
+  .carousel-input {
+    position: absolute;
+    scale: 0;
+  }
+
+  input:checked ~ .carousel-card .front {
+    transform: rotateY(-180deg);
+  }
+
+  input:checked ~ .carousel-card .back {
+    transform: rotateY(0);
+  }
+
+  .carousel-card :is(p) {
+    font-size: 0.5rem;
+  }
+
+  .carousel-card h2 {
+    font-size: 0.8rem;
+  }
+
+  .carousel-card p,
+  h2 {
+    margin-top: 0.6rem;
+    color: white;
+  }
+
+  .c-line {
+    background-color: #d4af37;
+    height: 0.2rem;
+    width: 100%;
+    transform: translateY(4px);
+  }
+}
+
 /* footer section */
 
-footer{
+footer {
   padding: 10px 13%;
   display: flex;
   justify-content: space-between;
@@ -680,24 +1035,25 @@ footer h1 {
   padding-top: 60px;
 }
 
-.company-info p{
+.company-info p {
   width: 320px;
 }
 
-footer h3{
+footer h3 {
   font-size: 18px;
+  text-align: center;
+  font-weight: bold;
 }
 
-footer ul{
+footer ul {
   padding: 0;
 }
 
-footer ul li{
+footer ul li {
   padding: 8px 0;
 }
 
-
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   .menu-icon {
     display: block;
   }
@@ -708,53 +1064,54 @@ footer ul li{
 
   .nav-links.visible {
     display: flex;
-    background: #333333;
+    background: #000;
     z-index: 1000;
     padding: 20px 0;
   }
 
-  .navbar{
-    background:#fff;
+  .navbar {
+    background: #000;
     padding: 10px 8%;
   }
 
-  nav ul li a{
+  nav ul li a {
     color: #fff;
   }
 
-  .bar{
-    background: #333333;
+  .bar {
+    background: #fff;
   }
 
-  form, .comfirm{
+  form,
+  .comfirm {
     padding: 10px 8%;
   }
 
-
-  .header section, .menu-container{
+  .header section,
+  .menu-container {
     padding: 10px 8%;
   }
-  .menu-container{
+  .menu-container {
     margin: 20px 0;
   }
-  .menu-header{
+  .menu-header {
     justify-content: flex-start;
   }
 
-  .menu-items{
+  .menu-items {
     width: 100%;
   }
 
-  footer section{
+  footer section {
     padding: 10px 8%;
     flex-direction: column;
   }
-  .company-info p{
+  .company-info p {
     width: 100%;
   }
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
@@ -762,7 +1119,6 @@ footer ul li{
 
 /* For screens smaller than 768px (Tablets and Mobile Devices) */
 @media screen and (max-width: 768px) {
-
   /* Navbar */
   .navbar {
     padding: 10px 8%;
@@ -778,7 +1134,7 @@ footer ul li{
 
   .nav-links.visible {
     display: flex;
-    background: #333333;
+    background: #000;
     z-index: 1000;
     padding: 20px 0;
     flex-direction: column;
@@ -790,7 +1146,7 @@ footer ul li{
   }
 
   .bar {
-    background: #333333;
+    background: #fff;
   }
 
   /* Form and other sections */
@@ -799,7 +1155,8 @@ footer ul li{
     padding: 10px 8%;
   }
 
-  .header section, .menu-container {
+  .header section,
+  .menu-container {
     padding: 10px 8%;
   }
 
@@ -816,9 +1173,25 @@ footer ul li{
   }
 
   /* Footer */
-  footer section {
-    padding: 10px 8%;
-    flex-direction: column;
+  @media (max-width: 768px) {
+    /* Stack the lists vertically on small screens */
+    .footer {
+      flex-direction: column; /* Stack the footer lists vertically */
+      align-items: center; /* Center the lists */
+      gap: 2rem;
+    }
+
+    .footer-list {
+      width: 100%; /* Each list takes up full width */
+      margin-bottom: 1rem; /* Space between the lists */
+    }
+  }
+
+  @media (max-width: 576px) {
+    /* Further adjust on extra small screens if needed */
+    .footer-list li {
+      font-size: 0.9rem; /* Adjust text size for smaller screens */
+    }
   }
 
   .company-info p {
@@ -826,29 +1199,18 @@ footer ul li{
   }
 
   /* Carousel Section */
-  .carousel-card {
-    width: 100%;
-    height: auto;
-    margin: 10px 0;
-  }
-
-  .carousel-card .front img {
-    height: 200px; /* Adjust image height for smaller screens */
-  }
-
-  .carousel-card .back {
-    padding: 10px 10px 20px 10px; /* Adjust padding */
-  }
 
   /* Adjust the text sizes */
-  h1, h2, h3, p {
+  h1,
+  h2,
+  h3,
+  p {
     font-size: 16px; /* Reduce font size for small screens */
   }
 }
 
 /* For screens smaller than 480px (Mobile Devices) */
 @media screen and (max-width: 480px) {
-
   /* Navbar */
   .navbar {
     padding: 10px 5%;
@@ -866,22 +1228,6 @@ footer ul li{
   .menu-items {
     width: 100%;
     text-align: center;
-  }
-
-  /* Hero section */
-
-  /* Carousel */
-  .carousel-card {
-    width: 90%;
-    margin-bottom: 10px;
-  }
-
-  .carousel-card .front img {
-    height: 180px; /* Adjust the height of images */
-  }
-
-  .carousel-card .back {
-    padding: 10px;
   }
 
   /* Footer */
@@ -924,25 +1270,25 @@ footer ul li{
     .about {
       flex-wrap: wrap; /* Allow items to wrap when there's more space */
     }
-  
+
     .image {
       width: 50%; /* The image will take up half the container width */
       height: auto; /* Keep the aspect ratio */
     }
-  
+
     .text {
       width: 50%; /* The text will take up the other half of the container */
       padding: 100px; /* Adjust padding for larger screens */
     }
   }
-  
+
   /* For very large screens (e.g., 2500px and up) */
   @media (min-width: 2500px) {
-    .image{
+    .image {
       width: 45%; /* Reduce the image container width for ultra-wide screens */
       height: auto; /* Keep aspect ratio intact */
     }
-  
+
     .text {
       width: 45%; /* Adjust text width to balance the layout */
       padding: 120px; /* Increase padding for ultra-wide screens */
